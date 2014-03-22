@@ -1,0 +1,6 @@
+{:+ {:app [(:lt.objs.plugins/load-js "relative line numbers_compiled.js" true)]
+     :editor [:lt.plugins.relativelinenumbers/activate]
+     :editor.active [:lt.plugins.relativelinenumbers/update-line-numbers
+                     (:lt.plugins.relativelinenumbers/relative-linenumber-settings true true)
+                     ]
+     }}
