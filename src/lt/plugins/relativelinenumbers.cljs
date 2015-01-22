@@ -100,4 +100,6 @@
                       (let [last-line (-> @state :pos :line)]
                         (swap! state assoc :pos (editor/->cursor this))
                         (when (not= last-line (-> @state :pos :line))
-                          (.refresh (editor/->cm-ed this))))))
+                          (doto (editor/->cm-ed this)
+                            (.refresh)
+                            (.scrollIntoView))))))

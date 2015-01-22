@@ -15,10 +15,10 @@ lt.plugins.relativelinenumbers.state = cljs.core.atom.call(null,new cljs.core.Pe
 /**
 * Convert absolute line number to number relative to current line.
 */
-lt.plugins.relativelinenumbers.line__GT_relative_line = (function line__GT_relative_line(l){var first_line = new cljs.core.Keyword(null,"first-line-number","first-line-number",2408303383).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,lt.plugins.relativelinenumbers.state));var cur = (new cljs.core.Keyword(null,"line","line",1017226086).cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"pos","pos",1014015430).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,lt.plugins.relativelinenumbers.state))) + first_line);if(cljs.core.truth_((function (){var and__6801__auto__ = cljs.core._EQ_.call(null,cur,l);if(and__6801__auto__)
+lt.plugins.relativelinenumbers.line__GT_relative_line = (function line__GT_relative_line(l){var first_line = new cljs.core.Keyword(null,"first-line-number","first-line-number",2408303383).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,lt.plugins.relativelinenumbers.state));var cur = (new cljs.core.Keyword(null,"line","line",1017226086).cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"pos","pos",1014015430).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,lt.plugins.relativelinenumbers.state))) + first_line);if(cljs.core.truth_((function (){var and__6359__auto__ = cljs.core._EQ_.call(null,cur,l);if(and__6359__auto__)
 {return new cljs.core.Keyword(null,"show-current-line","show-current-line",1376606218).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,lt.plugins.relativelinenumbers.preferences));
 } else
-{return and__6801__auto__;
+{return and__6359__auto__;
 }
 })()))
 {return l;
@@ -72,7 +72,9 @@ lt.objs.command.command.call(null,new cljs.core.PersistentArrayMap(null, 3, [new
 })], null));
 lt.plugins.relativelinenumbers.__BEH__update_line_numbers = (function __BEH__update_line_numbers(this$){var last_line = new cljs.core.Keyword(null,"line","line",1017226086).cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"pos","pos",1014015430).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,lt.plugins.relativelinenumbers.state)));cljs.core.swap_BANG_.call(null,lt.plugins.relativelinenumbers.state,cljs.core.assoc,new cljs.core.Keyword(null,"pos","pos",1014015430),lt.objs.editor.__GT_cursor.call(null,this$));
 if(cljs.core.not_EQ_.call(null,last_line,new cljs.core.Keyword(null,"line","line",1017226086).cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"pos","pos",1014015430).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,lt.plugins.relativelinenumbers.state)))))
-{return lt.objs.editor.__GT_cm_ed.call(null,this$).refresh();
+{var G__7877 = lt.objs.editor.__GT_cm_ed.call(null,this$);G__7877.refresh();
+G__7877.scrollIntoView();
+return G__7877;
 } else
 {return null;
 }
